@@ -21,9 +21,17 @@ class ArticleController extends Controller
 
     public function store()
     {
+
+        request()->validate([
+            'title' => 'required',
+            'excerp' => 'required',
+            'body' => 'required'
+
+        ]);
+
         $article = new Article();
         $article->title = request('title');
-        $article->excerp = request('excerpt');
+        $article->excerp = request('excerp');
         $article->body = request('body');
 
         $article->save();
@@ -41,10 +49,18 @@ class ArticleController extends Controller
     public function update($id)
     {
 
+        request()->validate([
+            'title' => 'required',
+            'excerp' => 'required',
+            'body' => 'required'
+
+        ]);
+
+
         $article = Article::find($id);
 
         $article->title = request('title');
-        $article->excerp = request('excerpt');
+        $article->excerp = request('excerp');
         $article->body = request('body');
 
         $article->save();

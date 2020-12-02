@@ -8,11 +8,20 @@
 
         <fieldset>
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" placeholder="Write a title" required>
-            <label for="excerpt">Excerpt</label>
-            <textarea type="text" name="excerpt" id="excerpt" placeholder="Write a excerpt" required></textarea>
+            <input type="text" name="title" id="title" placeholder="Write a title" value="{{old('title')}}" required>
+            @error('title')
+            <p style="color:red">{{$errors->first()}}</p>
+            @enderror
+            <label for="excerp">Excerpt</label>
+            <textarea type="text" name="excerp" id="excerp" placeholder="Write a excerpt" required>{{old('excerp')}}</textarea>
+            @error('excerp')
+            <p style="color:red">{{$errors->first()}}</p>
+            @enderror
             <label for="body">Body</label>
-            <textarea type="text" name="body" id="body" placeholder="Write an article" required></textarea>
+            <textarea type="text" name="body" id="body" placeholder="Write an article" required>{{old('body')}}</textarea>
+            @error('body')
+            <p style="color:red">{{$errors->first()}}</p>
+            @enderror
             <button class="button-primary" type="submit">Submit</button>
         </fieldset>
     </form>

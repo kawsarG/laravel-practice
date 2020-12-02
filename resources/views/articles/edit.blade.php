@@ -8,9 +8,9 @@
         @method('PUT')
         <fieldset>
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" placeholder="Write a title" value={{$article->title}} required>
-            <label for="excerpt">Excerpt</label>
-            <textarea type="text" name="excerpt" id="excerpt" placeholder="Write a excerpt" required>{{$article->excerp}}</textarea>
+            <input type="text" name="title" id="title" placeholder="Write a title" value="{{$article->title}}" required>
+            <label for="excerp">Excerpt</label>
+            <textarea type="text" name="excerp" id="excerp" placeholder="Write a excerpt" required>{{$article->excerp}}</textarea>
             <label for="body">Body</label>
             <textarea type="text" name="body" id="body" placeholder="Write an article" required>{{$article->body}}
 
